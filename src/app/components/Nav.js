@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
+import Button from './Button'
+
 const Header = styled.header`
 position: fixed;
 top: 0;
@@ -71,22 +73,7 @@ a {
 }
 `
 
-const NavButton = styled.button`
-padding: 8px 12px;
-font-size: 16px;
-font-weight: 700;
-text-decoration: none;
-text-transform: uppercase;
-color: #fff;
-background: transparent;
-border: 2px solid;
-cursor: pointer;
-transition: color .25s ease-in-out;
-
-%:hover {
-    color: #888;
-}
-
+const NavButton = styled(Button)`
 @media (min-width: 479px) {
     display: none;
 }

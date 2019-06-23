@@ -7,6 +7,8 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 
+import Nav from `./components/Nav`
+
 export default class Main extends React.Component {
   render () {
     return (
@@ -32,6 +34,8 @@ export default class Main extends React.Component {
             </ul>
           </nav>
         </header> */}
+
+        <Nav />
 
         <Route exact={true} path="/" component={Home}/>
         <Route path="/about" component={About}/>
