@@ -7,7 +7,7 @@ import Contact from './pages/Contact'
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 
-import Nav from `./components/Nav`
+import Nav from './components/Nav'
 
 export default class Main extends React.Component {
   render () {
