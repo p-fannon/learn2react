@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 const Container = styled.div`
   padding-right: 15px;
@@ -26,6 +26,6 @@ const Container = styled.div`
   @media (min-width: 1200px) {
     max-width: 1140px;
   }
-`
+`;
 
-export default Container
+export default Container;

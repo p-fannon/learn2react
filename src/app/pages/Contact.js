@@ -1,53 +1,58 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 //Import components
-import AwesomeIcon from './../components/AwesomeIcon'
-import Container from './../components/Container'
-import Link from './../components/Link'
-import Section from './../components/Section'
-import { Heading, Text } from './../components/Typography'
+import AwesomeIcon from "./../components/AwesomeIcon";
+import Container from "./../components/Container";
+import Link from "./../components/Link";
+import Section from "./../components/Section";
+import { Heading, Text } from "./../components/Typography";
 
 const ContactLink = styled(Link)`
-margin-bottom: 32px;
-display: inline-block;
-font-size: 16px;
+  margin-bottom: 32px;
+  display: inline-block;
+  font-size: 16px;
 
-@media (min-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 18px;
-}
-`
+  }
+`;
 
 const SocialMediaList = styled.ul`
-padding: 0;
-margin: 0;
+  padding: 0;
+  margin: 0;
 
-li {
+  li {
     display: inline-block;
     list-style-type: none;
 
     &:not(:last-child) {
-        margin-right: 16px;
+      margin-right: 16px;
     }
-}
+  }
 
-a {
+  a {
     font-size: 18px;
 
     @media (min-width: 480px) {
-        font-size: 24px;
+      font-size: 24px;
     }
-}
-`
+  }
+`;
 
 export default class Contact extends React.Component {
-    render () {
-        return (
-            <Section centered>
-                <Container>
-                    <Heading>Say hello</Heading>
-                    <Text>I'm available for freelance work. If you are interested in a new project, collaboration, or just to chat, feel free to contact me.</Text>
-                    <ContactLink href="mailto:email@example.com">email@example.com</ContactLink>
+  render() {
+    return (
+      <Section centered>
+        <Container>
+          <Heading>Say hello</Heading>
+          <Text>
+            I'm available for freelance work. If you are interested in a new
+            project, collaboration, or just to chat, feel free to contact me.
+          </Text>
+          <ContactLink href="mailto:email@example.com">
+            email@example.com
+          </ContactLink>
 
           <Text>Follow me on the web:</Text>
 
@@ -88,8 +93,8 @@ export default class Contact extends React.Component {
               </Link>
             </li>
           </SocialMediaList>
-                </Container>
-            </Section>
-        )
-    }
+        </Container>
+      </Section>
+    );
+  }
 }

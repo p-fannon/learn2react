@@ -1,7 +1,5 @@
-import React from 'react'
+import React from "react";
 
-const AwesomeIcon = ({ icon }) => (
-    <span className={`fa fa-${icon}`}></span>
-)
+const AwesomeIcon = ({ icon }) => <span className={`fa fa-${icon}`}></span>;
 
-export default AwesomeIcon
+export default AwesomeIcon;

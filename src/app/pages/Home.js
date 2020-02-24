@@ -1,12 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router';
+import React from "react";
+import styled from "styled-components";
+import { Link } from "react-router";
 
 // Import components
-import Button from './../components/Button'
-import Container from './../components/Container'
-import Section from './../components/Section'
-import { Heading, Subheading } from './../components/Typography'
+import Button from "./../components/Button";
+import Container from "./../components/Container";
+import Section from "./../components/Section";
+import { Heading, Subheading } from "./../components/Typography";
 
 const HomeWrapper = styled(Section)`
   background-image: url(https://source.unsplash.com/t3zrEm88ehc/480x800);
@@ -35,10 +35,10 @@ const HomeWrapper = styled(Section)`
     top: 0;
     left: 0;
     z-index: 1;
-    content: '';
+    content: "";
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
   ${Container} {
@@ -48,13 +48,13 @@ const HomeWrapper = styled(Section)`
   ${Subheading} {
     margin-bottom: 32px;
   }
-`
+`;
 
 // Using Button component but changing the element to 'a'
-const HomeButton = Button.withComponent('a')
+const HomeButton = Button.withComponent("a");
 
 export default class Home extends React.Component {
-  render () {
+  render() {
     return (
       <HomeWrapper centered>
         <Container>
@@ -65,6 +65,6 @@ export default class Home extends React.Component {
           <HomeButton href="/portfolio">My work</HomeButton>
         </Container>
       </HomeWrapper>
-    )
+    );
   }
 }

@@ -1,21 +1,23 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from "styled-components";
 
-import Container from './Container'
+import Container from "./Container";
 
 const Section = styled.section`
-${props => props.centered && css`
-position: relative;
-display: flex;
-flex-direction: column;
-aligh-items: center;
-justify-content: center;
-height: 100%;
-`}
+  ${props =>
+    props.centered &&
+    css`
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      aligh-items: center;
+      justify-content: center;
+      height: 100%;
+    `}
 
-${Container} {
+  ${Container} {
     position: relative;
-    z-index: 2
-}
-`
+    z-index: 2;
+  }
+`;
 
-export default Section
+export default Section;
