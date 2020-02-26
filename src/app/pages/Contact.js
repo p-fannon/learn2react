@@ -40,61 +40,59 @@ const SocialMediaList = styled.ul`
   }
 `;
 
-export default class Contact extends React.Component {
-  render() {
-    return (
-      <Section centered>
-        <Container>
-          <Heading>Say hello</Heading>
-          <Text>
-            I'm available for freelance work. If you are interested in a new
-            project, collaboration, or just to chat, feel free to contact me.
-          </Text>
-          <ContactLink href="mailto:email@example.com">
-            email@example.com
-          </ContactLink>
+export default function Contact() {
+  return (
+    <Section centered>
+      <Container>
+        <Heading>Say hello</Heading>
+        <Text>
+          I'm available for freelance work. If you are interested in a new
+          project, collaboration, or just to chat, feel free to contact me.
+        </Text>
+        <ContactLink href="mailto:email@example.com">
+          email@example.com
+        </ContactLink>
 
-          <Text>Follow me on the web:</Text>
+        <Text>Follow me on the web:</Text>
 
-          <SocialMediaList>
-            <li>
-              <Link href="">
-                <AwesomeIcon icon="twitter" />
-              </Link>
-            </li>
+        <SocialMediaList>
+          <li>
+            <Link href="">
+              <AwesomeIcon icon="twitter" />
+            </Link>
+          </li>
 
-            <li>
-              <Link href="">
-                <AwesomeIcon icon="linkedin" />
-              </Link>
-            </li>
+          <li>
+            <Link href="">
+              <AwesomeIcon icon="linkedin" />
+            </Link>
+          </li>
 
-            <li>
-              <Link href="">
-                <AwesomeIcon icon="behance" />
-              </Link>
-            </li>
+          <li>
+            <Link href="">
+              <AwesomeIcon icon="behance" />
+            </Link>
+          </li>
 
-            <li>
-              <Link href="">
-                <AwesomeIcon icon="dribbble" />
-              </Link>
-            </li>
+          <li>
+            <Link href="">
+              <AwesomeIcon icon="dribbble" />
+            </Link>
+          </li>
 
-            <li>
-              <Link href="">
-                <AwesomeIcon icon="github" />
-              </Link>
-            </li>
+          <li>
+            <Link href="">
+              <AwesomeIcon icon="github" />
+            </Link>
+          </li>
 
-            <li>
-              <Link href="">
-                <AwesomeIcon icon="codepen" />
-              </Link>
-            </li>
-          </SocialMediaList>
-        </Container>
-      </Section>
-    );
-  }
+          <li>
+            <Link href="">
+              <AwesomeIcon icon="codepen" />
+            </Link>
+          </li>
+        </SocialMediaList>
+      </Container>
+    </Section>
+  );
 }

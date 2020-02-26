@@ -38,10 +38,12 @@ body {
 
 const wrapper = document.getElementById("app");
 
-const App = () => (
-  <BrowserRouter>
-    <Main />
-  </BrowserRouter>
-);
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Main />
+    </BrowserRouter>
+  );
+}
 
 ReactDOM.render(<App />, wrapper);

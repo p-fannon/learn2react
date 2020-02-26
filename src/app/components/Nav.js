@@ -1,7 +1,5 @@
 import React from "react";
-import styled, { css } from "styled-components";
-
-import Button from "./Button";
+import styled from "styled-components";
 
 const Header = styled.header`
   position: fixed;
@@ -19,17 +17,11 @@ const NavWrapper = styled.nav`
   @media (max-width: 479px) {
     flex-direction: column;
     align-items: flex-end;
-
-    /* Nav is open because show is true */
-    ${props =>
-      props.isOpen &&
-      css`
-        ul {
-          position: absolute;
-          top: 64px;
-          max-height: 1000px;
-        }
-      `}
+    ul {
+      position: absolute;
+      top: 64px;
+      max-height: 1000px;
+    }
   }
 `;
 
@@ -75,54 +67,28 @@ const NavItem = styled.li`
   }
 `;
 
-const NavButton = styled(Button)`
-  @media (min-width: 479px) {
-    display: none;
-  }
-`;
+export default function Nav() {
+  return (
+    <Header>
+      <NavWrapper>
+        <NavList>
+          <NavItem>
+            <a href="/">Home</a>
+          </NavItem>
 
-export default class Nav extends React.Component {
-  constructor(props) {
-    super(props);
+          <NavItem>
+            <a href="/about">About</a>
+          </NavItem>
 
-    this.state = {
-      show: false
-    };
+          <NavItem>
+            <a href="/portfolio">Portfolio</a>
+          </NavItem>
 
-    this.toggleMenu = this.toggleMenu.bind(this);
-  }
-
-  toggleMenu() {
-    this.setState({
-      show: !this.state.show
-    });
-  }
-
-  render() {
-    return (
-      <Header>
-        <NavWrapper isOpen={this.state.show}>
-          <NavButton onClick={this.toggleMenu}>Menu</NavButton>
-
-          <NavList>
-            <NavItem>
-              <a href="/">Home</a>
-            </NavItem>
-
-            <NavItem>
-              <a href="/about">About</a>
-            </NavItem>
-
-            <NavItem>
-              <a href="/portfolio">Portfolio</a>
-            </NavItem>
-
-            <NavItem>
-              <a href="/contact">Contact</a>
-            </NavItem>
-          </NavList>
-        </NavWrapper>
-      </Header>
-    );
-  }
+          <NavItem>
+            <a href="/contact">Contact</a>
+          </NavItem>
+        </NavList>
+      </NavWrapper>
+    </Header>
+  );
 }

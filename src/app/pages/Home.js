@@ -53,18 +53,16 @@ const HomeWrapper = styled(Section)`
 // Using Button component but changing the element to 'a'
 const HomeButton = Button.withComponent("a");
 
-export default class Home extends React.Component {
-  render() {
-    return (
-      <HomeWrapper centered>
-        <Container>
-          <Heading>Paul Fannon</Heading>
+export default function Home() {
+  return (
+    <HomeWrapper centered>
+      <Container>
+        <Heading>Paul Fannon</Heading>
 
-          <Subheading>Designer &amp; developer</Subheading>
+        <Subheading>Designer &amp; developer</Subheading>
 
-          <HomeButton href="/portfolio">My work</HomeButton>
-        </Container>
-      </HomeWrapper>
-    );
-  }
+        <HomeButton href="/portfolio">My work</HomeButton>
+      </Container>
+    </HomeWrapper>
+  );
 }
