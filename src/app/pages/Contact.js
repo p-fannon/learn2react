@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 //Import components
@@ -7,6 +7,7 @@ import Container from "./../components/Container";
 import Link from "./../components/Link";
 import Section from "./../components/Section";
 import { Heading, Text } from "./../components/Typography";
+import { PageVisitContext } from "../Main";
 
 const ContactLink = styled(Link)`
   margin-bottom: 32px;
@@ -41,6 +42,7 @@ const SocialMediaList = styled.ul`
 `;
 
 export default function Contact() {
+  const { contactVisit } = useContext(PageVisitContext);
   return (
     <Section centered>
       <Container>
@@ -92,6 +94,11 @@ export default function Contact() {
             </Link>
           </li>
         </SocialMediaList>
+        <Text>
+          {contactVisit < 2
+            ? `You visited this page ${contactVisit} time`
+            : `You visited this page ${contactVisit} times`}
+        </Text>
       </Container>
     </Section>
   );

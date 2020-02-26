@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // Import components
 import Container from "./../components/Container";
 import Section from "./../components/Section";
 import { Heading, Subheading, Text } from "./../components/Typography";
+import { PageVisitContext } from '../Main';
 
 export default function About() {
+  const { aboutVisit } = useContext(PageVisitContext)
   return (
     <Section centered>
       <Container>
@@ -27,7 +29,12 @@ export default function About() {
           World. If you are interested in a new project, collaboration, or just
           to chat, feel free to contact me:
         </Text>
-        <a href="mailto:email@example.com">email@example.com</a>
+        <a href="mailto:email@example.com">email@example.com</a><br />
+        <Text>
+          {aboutVisit < 2
+          ? `You visited this page ${aboutVisit} time`
+        : `You visited this page ${aboutVisit} times`}
+        </Text>
       </Container>
     </Section>
   );

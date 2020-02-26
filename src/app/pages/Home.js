@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import { Link } from "react-router";
 
 // Import components
 import Button from "./../components/Button";
 import Container from "./../components/Container";
 import Section from "./../components/Section";
-import { Heading, Subheading } from "./../components/Typography";
+import { Heading, Subheading, Text } from "./../components/Typography";
+import { PageVisitContext } from "../Main";
 
 const HomeWrapper = styled(Section)`
   background-image: url(https://source.unsplash.com/t3zrEm88ehc/480x800);
@@ -54,6 +54,7 @@ const HomeWrapper = styled(Section)`
 const HomeButton = Button.withComponent("a");
 
 export default function Home() {
+  const { homeVisit } = useContext(PageVisitContext);
   return (
     <HomeWrapper centered>
       <Container>
@@ -62,6 +63,11 @@ export default function Home() {
         <Subheading>Designer &amp; developer</Subheading>
 
         <HomeButton href="/portfolio">My work</HomeButton>
+        <Text>
+          {homeVisit < 2
+            ? `You visited this page ${homeVisit} time`
+            : `You visited this page ${homeVisit} times`}
+        </Text>
       </Container>
     </HomeWrapper>
   );

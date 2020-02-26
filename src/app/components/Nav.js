@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { PageVisitContext } from "../Main";
 
 const Header = styled.header`
   position: fixed;
@@ -68,24 +69,32 @@ const NavItem = styled.li`
 `;
 
 export default function Nav() {
+  const {aboutVisit,
+    setAboutVisit,
+    contactVisit,
+    setContactVisit,
+    homeVisit,
+    setHomeVisit,
+    portfolioVisit,
+    setPortfolioVisit} = useContext(PageVisitContext)
   return (
     <Header>
       <NavWrapper>
         <NavList>
           <NavItem>
-            <a href="/">Home</a>
+            <a href="/" onClick={() => setHomeVisit(homeVisit + 1)}>Home</a>
           </NavItem>
 
           <NavItem>
-            <a href="/about">About</a>
+            <a href="/about" onClick={() => setAboutVisit(aboutVisit + 1)}>About</a>
           </NavItem>
 
           <NavItem>
-            <a href="/portfolio">Portfolio</a>
+            <a href="/portfolio" onClick={() => setPortfolioVisit(portfolioVisit + 1)}>Portfolio</a>
           </NavItem>
 
           <NavItem>
-            <a href="/contact">Contact</a>
+            <a href="/contact" onClick={() => setContactVisit(contactVisit + 1)}>Contact</a>
           </NavItem>
         </NavList>
       </NavWrapper>

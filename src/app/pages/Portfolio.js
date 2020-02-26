@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 //Import components
@@ -6,6 +6,7 @@ import Container from "./../components/Container";
 import Link from "./../components/Link";
 import Section from "./../components/Section";
 import { Heading, Subheading, Text } from "./../components/Typography";
+import { PageVisitContext } from "../Main";
 
 const PortfolioWrapper = styled(Section)`
   padding-top: 120px;
@@ -85,6 +86,7 @@ const PortfolioItemThumbnail = styled.img`
 `;
 
 export default function Portfolio() {
+  const { portfolioVisit } = useContext(PageVisitContext);
   return (
     <PortfolioWrapper>
       <Container>
@@ -169,6 +171,11 @@ export default function Portfolio() {
         </PortfolioGrid>
         <Text>Let's get in touch:</Text>
         <Link href="mailto:email@example.com">email@example.com</Link>
+        <Text>
+          {portfolioVisit < 2
+            ? `You visited this page ${portfolioVisit} time`
+            : `You visited this page ${portfolioVisit} times`}
+        </Text>
       </Container>
     </PortfolioWrapper>
   );
