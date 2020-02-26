@@ -36,7 +36,6 @@ body {
 }
 `;
 
-const container = document.querySelector("#app");
 const wrapper = document.getElementById("app");
 
 const App = () => (
